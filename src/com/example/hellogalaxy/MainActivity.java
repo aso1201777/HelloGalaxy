@@ -1,6 +1,7 @@
 package com.example.hellogalaxy;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -33,12 +34,15 @@ public class MainActivity extends Activity implements View.OnClickListener
 			case R.id.btnOK:
 				//
 				EditText etv = (EditText)findViewById(R.id.edtFirst);
-					String inputMsg = etv.getText().toString();
+				String inputMsg = etv.getText().toString();
 				EditText etv2 = (EditText)findViewById(R.id.edtFamily);
-					String inputMsg2 = etv.getText().toString();
+				String inputMsg2 = etv.getText().toString();
 					
-					TextView tv = (TextView)findViewById(R.id.txvMsg);
-					tv.setText("あなたでしたか、" + inputMsg + inputMsg2 + "さん。");
+				TextView tv = (TextView)findViewById(R.id.txvMsg);
+				tv.setText("あなたでしたか、" + inputMsg + inputMsg2 + "さん。");
+				Intent intent = new Intent(MainActivity.this,MsgActivity.class);
+				
+				startActivity(intent);
 		}
 
 	}
